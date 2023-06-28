@@ -10,6 +10,7 @@ if(len <= 3)
     WriteLine("array will be too short to reduce");//массив будет слишком короткий для укорачивания
     string[] nullArr = new string[0];//данное действие избавит от необходимости вводить значения в новый массив и сразу создаст "нулевой массив"
     //экономия времени.
+    //git commit -m 'proposed more economical solution on the branch Alter' - предложено более экономичное решение
 }
 for (int i = 0; i < len; i++)
 {
