@@ -5,6 +5,12 @@ Clear();
 WriteLine("Please, enter decimal numbers to determine the length of the new array");//введите число для определения длины массива
 int len = int.Parse(ReadLine());
 string[] longArr = new string[len];
+if(len <= 3) 
+{
+    WriteLine("array will be too short to reduce");//массив будет слишком короткий для укорачивания
+    string[] nullArr = new string[0];//данное действие избавит от необходимости вводить значения в новый массив и сразу создаст "нулевой массив"
+    //экономия времени.
+}
 for (int i = 0; i < len; i++)
 {
     int position = i + 1;
@@ -14,9 +20,4 @@ for (int i = 0; i < len; i++)
 for (int i = 0; i < longArr.Length; i++)
 {
     Write(longArr[i] + "\t");
-}//git commit -m 'array data entry problem solved' - решена задача ввода данных в массив
-if(longArr.Length <= 3)
-{
-    string[] nullArr = new string[0];
-    WriteLine("Array reduction is not requaried");//уменьшение массива не требуется
 }
