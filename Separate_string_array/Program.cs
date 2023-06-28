@@ -8,10 +8,11 @@ string[] longArr = new string[len];
 if(len <= 3) 
 {
     WriteLine("array will be too short to reduce");//массив будет слишком короткий для укорачивания
-    string[] nullArr = new string[0];//данное действие избавит от необходимости вводить значения в новый массив и сразу создаст "нулевой массив"
-    //экономия времени.
-    //git commit -m 'proposed more economical solution on the branch Alter' - предложено более экономичное решение
+    string[] nullArr = new string[0];
+    Environment.Exit(0);//Завершает выполнение программы принудительно
+    //данное действие избавит от необходимости вводить значения в новый массив и сразу создаст "нулевой массив"
 }
+
 for (int i = 0; i < len; i++)
 {
     int position = i + 1;
@@ -21,4 +22,13 @@ for (int i = 0; i < len; i++)
 for (int i = 0; i < longArr.Length; i++)
 {
     Write(longArr[i] + "\t");
+}
+string[] shortArr = new string[3];
+Random random = new Random();//Необходима переменная random, так как метод Next типа Random - экземплярный метод. 
+WriteLine("new short array: ");
+for (int i = 0; i < 4; i++)
+{
+    int index = random.Next(0,longArr.Length);
+     shortArr[i] = longArr[index];
+     Write(shortArr[i] + "\t");
 }
